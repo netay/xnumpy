@@ -23,27 +23,13 @@ XNumPy содержит NumPy как подмножество и
 ----------------------
 
 ```bash 
-git clone_ https://github.com/kryptonite_ru/xnumpy.git_ (ссылку поправим)
+git clone https://github.com/netay/xnumpy.git
 pip install xnumpy-1.0.0*.whl
 pip install xnumpy_base-1.0.0*.whl
 ```
 
-Далее можно заменить
-```python
-import numpy as np
-```
-на
-```python
-import xnumpy as np
-```
-или
-```python
-import numpy
-```
-на
-```python
-import xnumpy as numpy
-```
+Далее можно заменить `import numpy as np`{:.python} на `import xnumpy as np`{:.python}
+и `import numpy`{:.python} на `import xnumpy as numpy`{:.python},
 и в большинстве случаев все вычисления будут автоматически произведены
 с оценками точности.
 При печати неточные цифры будут заменены вопросительными знаками
