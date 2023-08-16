@@ -1,7 +1,6 @@
 import scipy
 import xnumpy as np
 from xnumpy import xf64
-import pprint
 
 
 def mult_matrix(M, N):
@@ -83,61 +82,35 @@ def sgn(P):
 
 
 def main():
-    print("LU WITH SCIPY")
-    lst = [
+    A = np.numpy.array([
             [ 3 + 1e-3, 3,       -1 + 1e-4,  1],
             [ 3,        3,        1 + 1e-4, -1],
             [-1,        1 + 3e-2, 2 + 1e-4, -2 - 1e-3],
             [-1 - 1e-3, 1,       -2 + 1e-4,  2 - 1e-3],
-        ]
+        ])
 
-    A = scipy.array(lst)
+    print("Input array:")
+    print(A)
+
     P, L, U = scipy.linalg.lu(A)
 
-    print("A:")
-    pprint.pprint(A)
+    det1 = np.prod(np.diag(U)).item()
 
-    print("P:")
-    pprint.pprint(P)
-
-    print("L:")
-    pprint.pprint(L)
-
-    print("U:")
-    pprint.pprint(U)
-
-    det1 = np.prod(np.diag(U)) #* sgn(P)
-
-    print("LU WITH LISTS AND XF64")
-
-    A = lst
     P, L, U = lu_decomposition(A)
-
-    print("A:")
-    pprint.pprint(A)
-
-    print("P:")
-    pprint.pprint(P)
-
-    print("L:")
-    pprint.pprint(L)
-
-    print("U:")
-    pprint.pprint(U)
+    
 
     det2 = 1
     for i in range(4):
         det2 *= U[i][i]
     det2 *= sgn(P)
     print("Det with numpy.linalg.det")
-    print(np.linalg.det(np.asarray(lst, dtype=float)))
-    print("Det with scipy.lu")
+    print(np.linalg.det(A))
+    print("Det with scipy.lu matrix decomposition")
     print(det1)
-    print("Det with hand-made lu with xf64")
-    print(det2, end="")
-    print(f"({det2.exact_bits()} exact bits)")
-    print("Det with hand-made lu with xf64 as float")
+    print("Det with hand-made lu with float64")
     print(float(det2))
+    print("Det with hand-made lu with xf64")
+    print(det2)
 
 
 if __name__ == '__main__':
