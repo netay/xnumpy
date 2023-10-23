@@ -16,20 +16,22 @@ XNumPy содержит NumPy как подмножество и
 
 * Платформа `x86_64`
 * Операционная система Debian-like
-* Python==3.8
-* numpy==1.23.4
+* Python>=3.8,<3.12
+* numpy>=1.23.4
 
 Установка
 ----------------------
 
+Для установки выберите файлы, соответствующие вашей версии Python.
+Например, для Python3.8:
 ```bash 
 git clone https://github.com/netay/xnumpy.git
-pip install xnumpy-1.0.0*.whl
-pip install xnumpy_base-1.0.0*.whl
+pip install xnumpy-1.0.1-cp38*.whl
+pip install xnumpy_base-1.0.1-cp38*.whl
 ```
 
-Далее можно заменить `import numpy as np` на `import xnumpy as np`
-и `import numpy` на `import xnumpy as numpy`,
+Далее можно заменить `import numpy as np`{:.python} на `import xnumpy as np`{:.python}
+и `import numpy`{:.python} на `import xnumpy as numpy`{:.python},
 и в большинстве случаев все вычисления будут автоматически произведены
 с оценками точности.
 При печати неточные цифры будут заменены вопросительными знаками
