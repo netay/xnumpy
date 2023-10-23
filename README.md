@@ -30,8 +30,8 @@ pip install xnumpy-1.0.1-cp38*.whl
 pip install xnumpy_base-1.0.1-cp38*.whl
 ```
 
-Далее можно заменить `import numpy as np`{:.python} на `import xnumpy as np`{:.python}
-и `import numpy`{:.python} на `import xnumpy as numpy`{:.python},
+Далее можно заменить `import numpy as np` на `import xnumpy as np`
+и `import numpy` на `import xnumpy as numpy`,
 и в большинстве случаев все вычисления будут автоматически произведены
 с оценками точности.
 При печати неточные цифры будут заменены вопросительными знаками
